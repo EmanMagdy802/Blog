@@ -1,9 +1,2 @@
 <h1> New Post </h1>
-<%= form_with(url: "/posts", method: "get") do %>
-    <div class="form-group">
-        <%= text_field_tag(:title, nil, placeholder: "Title....", class: "form-control" ) %>
-        <br>
-        <%= text_area_tag(:content, nil, placeholder: "Content...", rows: 5, class: "form-control") %>
-    </div>
-    <%= submit_tag("Post", class: "btn btn-success btn-block") %>
-<% end %>
+<%= render 'partial/postForm'%>

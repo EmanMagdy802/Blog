@@ -1,1 +1,13 @@
-<h1> Home </h1>
+<% @posts.each do |post| %>
+    <div class="card md-12 mb-3">
+       <div class="card-body">
+          <h4 class="card-title"><%= post.title %></h4>
+          <h6 class="card-title"><%= post.user.name %></h6>
+          <p class="card-text"><%= post.content %></p>
+          <p class="card-text"> last update at: <%= post.updated_at %></p>
+          <a href="<%= edit_post_path(post) %>" class="btn btn-primary">Edit</a>
+          <%= link_to  "delete", post, method: :delete, class: "btn btn-danger" %>
+          <a href="<%= new_comment_path(post) %>" class="btn btn-success">Comment</a>
+       </div>
+    </div>
+ <% end %>

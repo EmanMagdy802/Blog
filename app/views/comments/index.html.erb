@@ -1,0 +1,10 @@
+<h1>Comments</h1>
+<% @comments.each do |comment| %>
+    <div class="card md-12 mb-3">
+       <div class="card-body">
+          <h4 class="card-title"><%= comment.content %></h4>
+          <h6 class="card-title">for: <%= comment.post.title %></h6>
+          <%= link_to  "delete", comment, method: :delete, class: "btn btn-danger" %>
+       </div>
+    </div>
+ <% end %>
